@@ -4,8 +4,8 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'commander',
     environment: environment,
-    rootURL: '/',
-    locationType: 'auto',
+    rootURL: null,
+    locationType: process.env.EMBER_CLI_ELECTRON ? 'hash' : 'auto',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -43,7 +43,6 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
   }
 
   return ENV;
